@@ -10,8 +10,8 @@ export const Providers: React.FC<{ children: React.ReactNode }> = ({children}) =
       defaultOptions: {
         queries: {
           refetchOnWindowFocus: false,
-          refetchOnMount: false,
-          refetchInterval: 5000,
+          // refetchOnMount: false,
+          // refetchInterval: 20000,
         },
       },
     }

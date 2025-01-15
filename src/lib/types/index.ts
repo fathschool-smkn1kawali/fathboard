@@ -84,12 +84,30 @@ export type Response = {
 export interface ClassData {
   id: number;
   name: string;
-  total_student_present: number;
-  total_student_absent: number;
-  total_student_leave: number;
   status: string;
   teacher: string;
   lesson: string;
+
+  students_present: {
+    total_student_present: number;
+    data: Student[]
+  };
+
+  students_absent: {
+    total_student_absent: number;
+    data: Student[]
+  };
+
+  students_leave: { 
+    total_student_leave: number;
+    data: Student[]
+  };
+}
+
+export interface Student {
+  id: number;
+  name: string;
+  status: string;
 }
 
 // Interface untuk data level kelas

@@ -15,7 +15,8 @@ export const InformationClass = () => {
   const gradeXII = data?.data?.data.classes[2] 
   const gradeXIIModal = useDisclosure();
 
-  // return <pre>{JSON.stringify(gradeX, null, 2)}</pre>
+
+  // useGetData By Class Level and Mayor 
 
   return (
     <div>
