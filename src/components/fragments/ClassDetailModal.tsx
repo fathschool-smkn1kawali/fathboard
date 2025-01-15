@@ -40,7 +40,7 @@ export const ClassDetailModal = ({ gradeData, isOpen, onOpenChange}: ClassModalP
                 <div className="space-y-4">
                   {sortedClassData?.map((classInfo) => (
                     // Card Component Individual
-                    <Card isPressable fullWidth key={classInfo?.id} className="border p-2.5 hover:scale-95 transition duration-300 cursor-default">
+                    <Card fullWidth key={classInfo?.id} className="border p-2.5 hover:scale-95 transition duration-300 cursor-default">
                       <CardHeader className="flex items-center gap-4">
                         <h4 className="text-lg font-semibold">
                           {classInfo?.name}
@@ -59,19 +59,19 @@ export const ClassDetailModal = ({ gradeData, isOpen, onOpenChange}: ClassModalP
                       </CardHeader>
                       <CardBody>
                         <ul className="list-disc list-inside">
-                          <li className="font-semibold">Kehadiran:{" "}
-                            <button className="text-success underline" onClick={() => handleOpenNestedModal(classInfo?.students_present.data ?? [])}>
-                              {classInfo?.students_present.total_student_present ?? 0} Siswa
+                          <li className="font-semibold">
+                            <button onClick={() => handleOpenNestedModal(classInfo?.students_present.data ?? [])}>
+                              Kehadiran:{" "} <span className="text-success underline">{classInfo?.students_present.total_student_present ?? 0} Siswa</span>
                             </button>
                           </li>
-                          <li className="font-semibold">Tidak Hadir:{" "}
-                            <button className="text-danger underline" onClick={() => handleOpenNestedModal(classInfo?.students_absent.data ?? [])}>
-                              {classInfo?.students_absent.total_student_absent ?? 0} Siswa
+                          <li className="font-semibold">
+                            <button onClick={() => handleOpenNestedModal(classInfo?.students_absent.data ?? [])}>
+                              Tidak Hadir:{" "} <span className="text-danger underline">{classInfo?.students_absent.total_student_absent ?? 0} Siswa</span>
                             </button>
                           </li>
-                          <li className="font-semibold">Izin:{" "}
-                            <button className="text-warning underline" onClick={() => handleOpenNestedModal(classInfo?.students_leave.data ?? [])}>
-                              {classInfo?.students_leave.total_student_leave ?? 0} Siswa
+                          <li className="font-semibold">
+                            <button onClick={() => handleOpenNestedModal(classInfo?.students_leave.data ?? [])}>
+                              Izin:{" "} <span className="text-warning underline">{classInfo?.students_leave.total_student_leave ?? 0} Siswa</span>
                             </button>
                           </li>
                         </ul>
