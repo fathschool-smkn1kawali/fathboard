@@ -40,7 +40,8 @@ type Student = {
   name?: string;
   profile_photo_url?: string;
   role?: string;
-  course?: string;
+  
+  course?: string; // tambahan dari backend
 
   description?: string;
   days?: string;
